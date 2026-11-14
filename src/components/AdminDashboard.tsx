@@ -131,8 +131,8 @@ export function AdminDashboard({ profiles, transactions }: AdminDashboardProps) 
 
   return (
     <div className="luxury-ui space-y-0">
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <div className="mb-8 border-l-2 border-[#b9aa91] bg-[#f2f0eb] px-4 py-3 text-sm leading-6 text-[#625b50]">
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
+        <div className="mb-5 border-l-2 border-[#b9aa91] bg-[#f2f0eb] px-3 py-3 text-sm leading-6 text-[#625b50] sm:mb-8 sm:px-4">
           kindle direct publishing
         </div>
         <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
@@ -145,26 +145,26 @@ export function AdminDashboard({ profiles, transactions }: AdminDashboardProps) 
           </div>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-          <div className="overflow-x-auto rounded-2xl border border-slate-200">
-            <table className="min-w-full divide-y divide-slate-200 text-left">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="max-w-full overflow-x-auto overscroll-x-contain rounded-2xl border border-slate-200 touch-pan-x">
+            <table className="min-w-[540px] divide-y divide-slate-200 text-left sm:min-w-full">
               <thead className="bg-slate-50">
                 <tr>
-                  <th className="px-4 py-3 text-sm font-semibold text-slate-700">Name</th>
-                  <th className="px-4 py-3 text-sm font-semibold text-slate-700">Email</th>
-                  <th className="px-4 py-3 text-sm font-semibold text-slate-700">Role</th>
-                  <th className="px-4 py-3 text-sm font-semibold text-slate-700">Status</th>
+                  <th className="px-3 py-3 text-sm font-semibold text-slate-700 sm:px-4">Name</th>
+                  <th className="px-3 py-3 text-sm font-semibold text-slate-700 sm:px-4">Email</th>
+                  <th className="px-3 py-3 text-sm font-semibold text-slate-700 sm:px-4">Role</th>
+                  <th className="px-3 py-3 text-sm font-semibold text-slate-700 sm:px-4">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100 bg-white">
                 {profiles.map((profile) => (
                   <tr key={profile.id} className="hover:bg-slate-50">
-                    <td className="px-4 py-3 text-sm text-slate-700">
+                    <td className="px-3 py-3 text-sm text-slate-700 sm:px-4">
                       {profile.first_name} {profile.last_name}
                     </td>
-                    <td className="px-4 py-3 text-sm text-slate-600">{profile.email}</td>
-                    <td className="px-4 py-3 text-sm text-slate-600">{profile.role}</td>
-                    <td className="px-4 py-3 text-sm">
+                    <td className="px-3 py-3 text-sm text-slate-600 sm:px-4">{profile.email}</td>
+                    <td className="px-3 py-3 text-sm text-slate-600 sm:px-4">{profile.role}</td>
+                    <td className="px-3 py-3 text-sm sm:px-4">
                       <span
                         className={
                           profile.status === "Active"
@@ -181,7 +181,7 @@ export function AdminDashboard({ profiles, transactions }: AdminDashboardProps) 
             </table>
           </div>
 
-          <form onSubmit={handleCreateUser} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <form onSubmit={handleCreateUser} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
             <h2 className="mb-5 font-serif text-2xl font-normal text-[#302e29]">Add new user</h2>
             <div className="space-y-4">
               <div>
@@ -261,15 +261,15 @@ export function AdminDashboard({ profiles, transactions }: AdminDashboardProps) 
         </div>
       </section>
 
-      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
         <div className="mb-5">
           <p className="text-xs font-medium uppercase tracking-[0.28em] text-[#9a805d]">Account ledger</p>
           <h2 className="mt-3 font-serif text-3xl font-normal text-[#302e29]">Transactions</h2>
           <p className="mt-2 text-sm text-slate-600">Credits increase the balance; debits reduce it. Adjustments can be positive or negative.</p>
         </div>
 
-        <div className="grid gap-6 xl:grid-cols-[0.8fr_1.2fr]">
-          <form onSubmit={handleCreateTransaction} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+        <div className="grid gap-4 sm:gap-6 xl:grid-cols-[0.8fr_1.2fr]">
+          <form onSubmit={handleCreateTransaction} className="rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:p-5">
             <h3 className="mb-5 font-serif text-2xl font-normal text-[#302e29]">Record a transaction</h3>
             <div className="space-y-4">
               <div>
@@ -362,8 +362,8 @@ export function AdminDashboard({ profiles, transactions }: AdminDashboardProps) 
             </button>
           </form>
 
-          <div className="overflow-x-auto rounded-2xl border border-slate-200">
-            <table className="min-w-full divide-y divide-slate-200 text-left">
+          <div className="max-w-full overflow-x-auto overscroll-x-contain rounded-2xl border border-slate-200 touch-pan-x">
+            <table className="min-w-[640px] divide-y divide-slate-200 text-left sm:min-w-full">
               <thead className="bg-slate-50">
                 <tr>
                   <th className="px-4 py-3 text-sm font-semibold text-slate-700">Reference</th>

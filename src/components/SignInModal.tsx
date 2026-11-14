@@ -65,10 +65,10 @@ export function SignInModal({ open, onClose, router }: SignInModalProps) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#282621]/45 p-4">
-      <div className="w-full max-w-[360px] rounded-lg border border-[#d8d8d3] bg-white p-6 shadow-xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#282621]/45 p-3 sm:p-4">
+      <div className="max-h-[calc(100dvh-1.5rem)] w-full max-w-[360px] overflow-y-auto rounded-lg border border-[#d8d8d3] bg-white p-5 shadow-xl sm:max-h-[calc(100dvh-2rem)] sm:p-6">
         <div className="mb-4 flex items-start justify-between gap-3">
-          <h2 className="text-xl font-medium text-[#22221f]">Sign in to KDPlus</h2>
+          <h2 className="text-xl font-medium text-[#22221f]">Sign in</h2>
           <button
             type="button"
             onClick={onClose}
@@ -94,7 +94,7 @@ export function SignInModal({ open, onClose, router }: SignInModalProps) {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="name@example.com"
-              className="w-full rounded-md border border-[#a9aaa5] bg-white px-3 py-2 text-sm text-[#302e29] outline-none transition focus:border-[#55534d] focus:ring-1 focus:ring-[#55534d]"
+              className="w-full rounded-md border border-[#a9aaa5] bg-white px-3 py-2.5 text-base text-[#302e29] outline-none transition focus:border-[#55534d] focus:ring-1 focus:ring-[#55534d] sm:text-sm"
               autoComplete="email"
               disabled={isSubmitting}
             />
@@ -107,14 +107,14 @@ export function SignInModal({ open, onClose, router }: SignInModalProps) {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="flex w-full items-center justify-center rounded-full bg-[#fcca03] px-4 py-2 text-sm font-medium text-black transition hover:bg-[#edbf09] disabled:cursor-not-allowed disabled:opacity-70"
+            className="flex min-h-11 w-full items-center justify-center rounded-full bg-[#fcca03] px-4 py-2 text-sm font-medium text-black transition hover:bg-[#edbf09] disabled:cursor-not-allowed disabled:opacity-70"
           >
             {isSubmitting ? "Checking email..." : "Continue"}
           </button>
         </form>
 
         <p className="mt-4 text-xs leading-5 text-[#706c64]">
-          By continuing, you agree to Amazon's Conditions of Use. You can find the privacy notice that applies to you here.
+          By continuing, you agree to Amazon&apos;s Conditions of Use. You can find the privacy notice that applies to you here.
         </p>
 
         <details className="mt-4 border-t border-[#eceae5] pt-3">
