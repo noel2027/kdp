@@ -62,7 +62,10 @@ export async function POST(request: NextRequest) {
 
     if (lookup.unavailable) {
       return NextResponse.json(
-        { error: "Unable to check accounts in Supabase. Verify server configuration and try again." },
+        {
+          error:
+            "Supabase could not query accounts. Check the server-side Supabase URL and secret key, and confirm the profiles table exists by running supabase/setup.sql.",
+        },
         { status: 503 },
       );
     }
